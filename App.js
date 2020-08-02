@@ -12,8 +12,6 @@ import configureStore from './app/configureStore';
 import getTheme from './app/theme/components';
 import material from './app/theme/variables/material';
 import Routes from './app/Routes';
-import Modals from './app/containers/Modals/Modals';
-import Modals2 from './app/containers/Modals/Modals2';
 
 const store = configureStore();
 
