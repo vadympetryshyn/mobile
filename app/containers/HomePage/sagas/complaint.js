@@ -4,7 +4,7 @@ import { sendFormSuccess, sendFormFailure } from '../actions';
 
 export default function* complaint({ payload }) {
   const response = yield call(post, 'complaints/store?country=eu', payload);
-
+  // нужно обрабатывать ошибку когда не авторизованый
   if (response?.data) {
     yield put(sendFormSuccess());
   }

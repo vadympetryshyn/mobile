@@ -143,7 +143,7 @@ const Filters = ({}) => {
                     openModal({
                       type: 'category',
                       callback: setFiltersHandler,
-                      params: { filters: localFilters },
+                      params: { filters: localFilters, show: true },
                     }),
                   );
                 }}>

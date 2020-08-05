@@ -27,6 +27,6 @@ export const selectVacancy = createSelector(
 );
 
 export const selectSendForm = createSelector(
-    [selectVacanciesRoot],
-    (vacancies) => vacancies.sendForm,
+  [selectVacanciesRoot],
+  (vacancies) => vacancies.sendForm,
 );

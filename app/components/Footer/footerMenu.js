@@ -33,7 +33,7 @@ function footerMenu({ routeName, navigation, user }) {
             </Text>
           </Button>
         )}
-        <Button vertical>
+        <Button vertical onPress={() => navigation.navigate('CreateResume')}>
           <Icon style={styles.icon} type="SimpleLineIcons" name="plus" />
           <Text uppercase={false} style={styles.text}>
             Резюме

@@ -32,6 +32,7 @@ const Category = ({}) => {
   const modals = useSelector(selectModalsRoot);
   const filters = useSelector(selectFilters);
   const count = useSelector(selectCount);
+
   const localOrGlobalFilters = modals.params?.filters || filters;
   const [localFilters, setLocalFilters] = useState(
     localOrGlobalFilters.selectedCategories || { name: '', slug: '' },
@@ -79,7 +80,9 @@ const Category = ({}) => {
   };
 
   const show = () => {
-    if (!modals.open2) {
+    if (modals.callback) {
+      modals.callback({ selectedCategories: localFilters });
+    } else {
       dispatch(
         changeFilterRequest({
           name: 'selectedCategories',
@@ -87,8 +90,6 @@ const Category = ({}) => {
         }),
       );
       dispatch(getVacanciesRequest({ page: 1 }));
-    } else {
-      modals.callback({ selectedCategories: localFilters });
     }
     dispatch(closeModal());
   };
@@ -128,7 +129,7 @@ const Category = ({}) => {
         <Footer style={styles.footer}>
           <Button full yellow onPress={show}>
             <Text uppercase={false} style={styles.buttonText}>
-              {!modals.open2 ? `Показать ${count} вакансий` : 'Выбрать'}
+              {modals.params?.show ? `Показать ${count} вакансий` : 'Выбрать'}
             </Text>
           </Button>
         </Footer>

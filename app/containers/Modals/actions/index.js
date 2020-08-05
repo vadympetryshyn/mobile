@@ -11,6 +11,8 @@ import {
   GET_CITIES_SUCCESS,
   GET_COMPANY_TYPES_REQUEST,
   GET_COMPANY_TYPES_SUCCESS,
+  GET_EMPLOYMENT_TYPES_REQUEST,
+  GET_EMPLOYMENT_TYPES_SUCCESS,
 } from '../constants';
 
 export const openModal = (payload) => ({
@@ -70,5 +72,15 @@ export const getCompanyTypesRequest = (payload) => ({
 
 export const getCompanyTypesSuccess = (payload) => ({
   type: GET_COMPANY_TYPES_SUCCESS,
+  payload,
+});
+
+export const getEmploymentTypesRequest = (payload) => ({
+  type: GET_EMPLOYMENT_TYPES_REQUEST,
+  payload,
+});
+
+export const getEmploymentTypesSuccess = (payload) => ({
+  type: GET_EMPLOYMENT_TYPES_SUCCESS,
   payload,
 });

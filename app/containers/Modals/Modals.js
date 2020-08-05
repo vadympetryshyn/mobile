@@ -5,6 +5,7 @@ import Country from './components/country';
 import Category from './components/category';
 import City from './components/city';
 import CompanyType from './components/companyType';
+import EmploymentType from './components/employmentType';
 import CompanyCountry from './components/companyCountry';
 import SendResume from './components/sendResume';
 import GetRegistration from './components/getRegistration';
@@ -45,6 +46,8 @@ function Modals({}) {
         return <GetRegistration />;
       case 'complaint':
         return <Complaint />;
+      case 'employmentType':
+        return <EmploymentType />;
       default:
         return <Text>Такого модального окна не найдено</Text>;
     }

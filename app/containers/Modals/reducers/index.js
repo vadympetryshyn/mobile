@@ -7,6 +7,7 @@ import {
   GET_CATEGORIES_SUCCESS,
   GET_CITIES_SUCCESS,
   GET_COMPANY_TYPES_SUCCESS,
+  GET_EMPLOYMENT_TYPES_SUCCESS,
 } from '../constants';
 
 const initialState = {
@@ -22,6 +23,7 @@ const initialState = {
   cities: [],
   categories: [],
   companyTypes: [],
+  employmentTypes: [],
 };
 
 const modals = (state = initialState, action) => {
@@ -87,6 +89,13 @@ const modals = (state = initialState, action) => {
       return {
         ...state,
         companyTypes: action.payload,
+      };
+    }
+
+    case GET_EMPLOYMENT_TYPES_SUCCESS: {
+      return {
+        ...state,
+        employmentTypes: action.payload,
       };
     }
 

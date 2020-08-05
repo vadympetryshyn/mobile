@@ -21,3 +21,4 @@ const profile = (state = initialState, action) => {
 
 // Exports
 export default profile;
+export { initialState };
